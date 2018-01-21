@@ -3,3 +3,4 @@ env
 .ropeproject
 *.swp
 db.sqlite3
+venv
