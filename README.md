@@ -13,6 +13,11 @@ Contribuitions are welcomed and we try to keep things newbies friendly.  We need
 content, issues, comments and pull requests.  If you're a coder, the best place
 to start is our issues.  Please read them and help us shrpen them by commenting.
 
+## Archritecure
+
+A tumulus application is wrapped in a tumuli project.  First 3 steps are models,
+admin-based interface and RESTFull API (based on DRF).
+
 ## Installation
 
     $ python3 -m venv env
