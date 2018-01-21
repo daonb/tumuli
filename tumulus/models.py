@@ -64,4 +64,3 @@ class PersonalDump(models.Model):
     season = models.ForeignKey('Season', on_delete=models.CASCADE)
     what = models.TextField(default="",
                             help_text="context and description of the dump")
-
