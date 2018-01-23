@@ -1,4 +1,0 @@
-django<3
-Pillow==5.0.0
-dj-database-url==0.4.2
-whitenoise==3.3.1

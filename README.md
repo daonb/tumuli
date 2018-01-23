@@ -20,9 +20,9 @@ admin-based interface and RESTFull API (based on DRF).
 
 ## Installation
 
-    $ python3 -m venv env
-    $ . env/bin/activate
-    $ pip install -r requirments.txt
+    $ pipenv --python 3.6
+    $ pipenv install --dev
+    $ pipenv shell
     $ ./manage.py check
     $ ./manage.py migrate
     $ ./manage.py runserver
