@@ -4,6 +4,27 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class Memoir(models.Model):
+    ''' a story connection a memory dump connected to a person's season '''
+    memory_dump = models.ForeignKey('MemoryDump', on_delete=models.CASCADE)
+    season = models.ForeignKey('Season', on_delete=models.CASCADE)
+    story = models.TextField(default="",
+                             help_text="context and description of the dump")
+    author = models.ForeignKey(User, null=True, on_delete=models.CASCADE,
+                               related_name='memoirs')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+
+class Season(models.Model):
+    ''' a meaningful period in a life '''
+    story_audio = models.FileField()
+    story_text = models.TextField(default="")
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    tumulus = models.ForeignKey('Tumulus', on_delete=models.CASCADE)
+
+
 class Tumulus(models.Model):
     ''' a person's life story '''
     # a unique key to be
@@ -39,15 +60,6 @@ class Tumulus(models.Model):
         pass
 
 
-class Season(models.Model):
-    ''' a meaningful period in life '''
-    story_audio = models.FileField()
-    story_text = models.TextField(default="")
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
-    tumulus = models.ForeignKey(Tumulus, on_delete=models.CASCADE)
-
-
 class MemoryDump(models.Model):
     ''' basic content '''
     owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
@@ -59,15 +71,3 @@ class MemoryDump(models.Model):
     date = models.DateField(blank=True, null=True,
                             help_text="When was this dump made?")
     image = models.ImageField()
-
-
-class Memoir(models.Model):
-    ''' a story connection a memory dump connected to a person's season '''
-    memory_dump = models.ForeignKey('MemoryDump', on_delete=models.CASCADE)
-    season = models.ForeignKey('Season', on_delete=models.CASCADE)
-    story = models.TextField(default="",
-                             help_text="context and description of the dump")
-    author = models.ForeignKey(User, null=True, on_delete=models.CASCADE,
-                               related_name='memoirs')
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
