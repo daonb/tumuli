@@ -4,24 +4,27 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Tumulus(User):
+class Tumulus(models.Model):
     ''' a person's life story '''
     # a unique key to be
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4,
                             editable=False)
-    birthday = models.DateTimeField()
-    birthplace = models.TextField()
-    deathday = models.DateTimeField(blank=True, null=True)
-    deathplace = models.TextField(blank=True, null=True)
+    date_of_birth = models.DateField()
+    place_of_birth = models.TextField()
+    date_of_death = models.DateField(blank=True, null=True)
+    place_of_death = models.TextField(blank=True, null=True)
+    user = models.ForeignKey(User, null=True, blank=True,
+                             on_delete=models.SET_NULL)
     creator = models.ForeignKey(User, null=True, on_delete=models.SET_NULL,
                                 related_name='tumuli')
     editors = models.ManyToManyField(User, related_name='edits')
     created = models.DateTimeField(auto_now_add=True)
-    modified =models.DateTimeField(auto_now=True)
+    modified = models.DateTimeField(auto_now=True)
+    is_public = models.BooleanField(default=False)
 
     @property
     def is_dead(self):
-        return not self.deathday
+        return not self.date_of_death
 
     def get_absolute_url(self):
         ''' the url of the tumulus. user the uuid for the living,
