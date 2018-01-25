@@ -53,17 +53,21 @@ class MemoryDump(models.Model):
     owner = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     placed = models.DateTimeField(auto_now_add=True)
     story_audio = models.FileField()
-    seasons = models.ManyToManyField(Season, through='PersonalDump',
-                                     related_name='dumps')
+    seasons = models.ManyToManyField(Season, through='Memoir',
+                                     related_name='memoirs')
     who = models.TextField(default="", help_text="who is in the dump?")
     date = models.DateField(blank=True, null=True,
                             help_text="When was this dump made?")
     image = models.ImageField()
 
 
-class PersonalDump(models.Model):
-    ''' a memory dump connected to a person's life period '''
+class Memoir(models.Model):
+    ''' a story connection a memory dump connected to a person's season '''
     memory_dump = models.ForeignKey('MemoryDump', on_delete=models.CASCADE)
     season = models.ForeignKey('Season', on_delete=models.CASCADE)
-    what = models.TextField(default="",
-                            help_text="context and description of the dump")
+    story = models.TextField(default="",
+                             help_text="context and description of the dump")
+    author = models.ForeignKey(User, null=True, on_delete=models.CASCADE,
+                               related_name='memoirs')
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
