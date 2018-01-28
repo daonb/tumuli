@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-28 18:08+0200\n"
+"PO-Revision-Date: 2018-01-28 17:00+0200\n"
+"Last-Translator: Benny Daon <benny@tuzig.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:7
+msgid "biography"
+msgstr "ביוגרפיה"
+
+#: models.py:11
+msgid "Author"
+msgstr "מחבר"
+
+#: models.py:14 models.py:44
+msgid "Season"
+msgstr "עונה"
+
+#: models.py:16
+msgid "Content"
+msgstr "תוכן"
+
+#: models.py:19 models.py:36
+msgid "Story Audio"
+msgstr "שמע הסיפור"
+
+#: models.py:21 models.py:37
+msgid "Story Text"
+msgstr "מלל הסיפור"
+
+#: models.py:27
+msgid "Memoir"
+msgstr "זכרון"
+
+#: models.py:28
+msgid "Memoirs"
+msgstr "זכרונות"
+
+#: models.py:38
+msgid "Place"
+msgstr "מקום"
+
+#: models.py:39
+msgid "Start Date"
+msgstr "תאריך התחלה"
+
+#: models.py:40
+msgid "End Date"
+msgstr "תאריך סיום"
+
+#: models.py:45
+msgid "Seasons"
+msgstr "עונות"
+
+#: models.py:54
+msgid "Date of birth"
+msgstr "תאריך לידה"
+
+#: models.py:56
+msgid "Date of passing"
+msgstr "תאריך פטירה"
+
+#: models.py:57
+msgid "Place of birth"
+msgstr "מקום לידה"
+
+#: models.py:59
+msgid "Place of passing"
+msgstr "מקום פטירה"
+
+#: models.py:61
+msgid "Person"
+msgstr "אדם"
+
+#: models.py:63
+msgid "Editors"
+msgstr "עורכים"
+
+#: models.py:69
+msgid "Public"
+msgstr "ציבורי"
+
+#: models.py:75
+msgid "Biography"
+msgstr "ביוגרפיה"
+
+#: models.py:76
+msgid "Biographies"
+msgstr "ביוגרפיות"
+
+#: models.py:98
+msgid "Owner"
+msgstr "בעלים"
+
+#: models.py:99
+msgid "Import date"
+msgstr "תאריך יבוא"
+
+#: models.py:103
+msgid "Who"
+msgstr "מי"
+
+#: models.py:105
+msgid "Original Date"
+msgstr "תאריך המקור"
+
+#: models.py:110
+msgid "Content Atom"
+msgstr "פריט תוכן"
+
+#: models.py:111
+msgid "Content Atoms"
+msgstr "פרטי תוכן"
