@@ -12,6 +12,7 @@ class BiographyAdmin(admin.ModelAdmin):
     inlines = [
         SeassonInline,
     ]
+    list_display = ('user', 'creator', 'modified')
 
 
 class MemoirInline(admin.StackedInline):
