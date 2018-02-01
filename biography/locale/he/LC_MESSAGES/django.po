@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-28 18:08+0200\n"
-"PO-Revision-Date: 2018-01-28 17:00+0200\n"
+"POT-Creation-Date: 2018-02-01 13:07+0200\n"
+"PO-Revision-Date: 2018-02-01 13:09+0200\n"
 "Last-Translator: Benny Daon <benny@tuzig.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: he\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps.py:7
-msgid "biography"
+#: apps.py:7 models.py:42 models.py:76
+msgid "Biography"
 msgstr "ביוגרפיה"
 
 #: models.py:11
 msgid "Author"
 msgstr "מחבר"
 
-#: models.py:14 models.py:44
+#: models.py:14 models.py:45
 msgid "Season"
 msgstr "עונה"
 
@@ -40,6 +40,10 @@ msgstr "שמע הסיפור"
 #: models.py:21 models.py:37
 msgid "Story Text"
 msgstr "מלל הסיפור"
+
+#: models.py:22
+msgid "context and description of the dump"
+msgstr "תיאור וקונטקסט"
 
 #: models.py:27
 msgid "Memoir"
@@ -61,66 +65,89 @@ msgstr "תאריך התחלה"
 msgid "End Date"
 msgstr "תאריך סיום"
 
-#: models.py:45
+#: models.py:46
 msgid "Seasons"
 msgstr "עונות"
 
-#: models.py:54
+#: models.py:55
 msgid "Date of birth"
 msgstr "תאריך לידה"
 
-#: models.py:56
+#: models.py:57
 msgid "Date of passing"
 msgstr "תאריך פטירה"
 
-#: models.py:57
+#: models.py:58
 msgid "Place of birth"
 msgstr "מקום לידה"
 
-#: models.py:59
+#: models.py:60
 msgid "Place of passing"
 msgstr "מקום פטירה"
 
-#: models.py:61
+#: models.py:62
 msgid "Person"
 msgstr "אדם"
 
 #: models.py:63
+msgid "all other personal data is stored on the user"
+msgstr "כל שאר המידע האישי שמור במשתמש"
+
+#: models.py:64
 msgid "Editors"
 msgstr "עורכים"
 
-#: models.py:69
+#: models.py:66
+msgid "the good people that can edit this biography"
+msgstr "העורכים שיכולים לערוך את הביוגרפיה"
+
+#: models.py:70
 msgid "Public"
 msgstr "ציבורי"
 
-#: models.py:75
-msgid "Biography"
-msgstr "ביוגרפיה"
+#: models.py:71
+msgid "Is it public?"
+msgstr "האם ציבורי?"
 
-#: models.py:76
+#: models.py:77
 msgid "Biographies"
 msgstr "ביוגרפיות"
 
-#: models.py:98
+#: models.py:99
 msgid "Owner"
 msgstr "בעלים"
 
-#: models.py:99
+#: models.py:100
 msgid "Import date"
 msgstr "תאריך יבוא"
 
-#: models.py:103
+#: models.py:104
 msgid "Who"
 msgstr "מי"
 
-#: models.py:105
+#: models.py:104
+msgid "who is in the atom?"
+msgstr "מי מופיע בתמונה/במה עוסק המסמך"
+
+#: models.py:106
 msgid "Original Date"
 msgstr "תאריך המקור"
 
-#: models.py:110
+#: models.py:107
+msgid "When was this atom made?"
+msgstr "מתי צולמה/נחתם"
+
+#: models.py:108
+msgid "Image"
+msgstr "תמונה/מסמך"
+
+#: models.py:111
 msgid "Content Atom"
 msgstr "פריט תוכן"
 
-#: models.py:111
+#: models.py:112
 msgid "Content Atoms"
 msgstr "פרטי תוכן"
+
+#~ msgid "biography"
+#~ msgstr "ביוגרפיה"

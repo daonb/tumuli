@@ -29,6 +29,9 @@ class SeasonAdmin(admin.ModelAdmin):
 class ContentAtomAdmin(admin.ModelAdmin):
     model = ContentAtom
     list_display = ('placed', 'owner', 'who', 'date')
+    inlines = [
+        MemoirInline,
+    ]
 
 
 admin.site.register(Biography, BiographyAdmin)

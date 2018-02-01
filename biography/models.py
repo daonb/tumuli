@@ -19,7 +19,7 @@ class Memoir(models.Model):
         null=True, verbose_name=_("Story Audio"), blank=True)
     story_text = models.TextField(
         _("Story Text"), blank=True,
-        help_text="context and description of the dump")
+        help_text=_("context and description of the dump"))
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -60,15 +60,15 @@ class Biography(models.Model):
         _("Place of passing"), blank=True, null=True)
     user = models.ForeignKey(
         User, verbose_name=_("Person"), on_delete=models.CASCADE,
-        help_text='all other personal data is stored on the user')
+        help_text=_('all other personal data is stored on the user'))
     editors = models.ManyToManyField(User, verbose_name=_("Editors"),
         related_name='editing_bios',
-        help_text='the good people that can edit this biography')
+        help_text=_('the good people that can edit this biography'))
     # creator is critical when we have issues of ownership and liability
     creator = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='created_bios')
     is_public = models.BooleanField(_("Public"), default=False,
-                    help_text='Is it public?')
+                    help_text=_('Is it public?'))
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -101,10 +101,10 @@ class ContentAtom(models.Model):
     seasons = models.ManyToManyField(
         Season, through='Memoir', related_name='memoirs')
     who = models.TextField(
-        _("Who"), blank=True, help_text="who is in the atom?")
+        _("Who"), blank=True, help_text=_("who is in the atom?"))
     date = models.DateTimeField(
         _("Original Date"),
-        blank=True, null=True, help_text="When was this atom made?")
+        blank=True, null=True, help_text=_("When was this atom made?"))
     image = models.ImageField(verbose_name=_("Image"))
 
     class Meta:
