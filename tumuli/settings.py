@@ -13,8 +13,8 @@ import os
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(PROJECT_ROOT)
 
 
 # Quick-start development settings - unsuitable for production
@@ -148,3 +148,6 @@ if 'AWS_SECRET_ACCESS_KEY' in os.environ:
     AWS_SECRET_ACCESS_KEY= os.environ['AWS_SECRET_ACCESS_KEY']
     AWS_ACCESS_KEY_ID=os.environ['AWS_ACCESS_KEY_ID']
     AWS_S3_REGION_NAME=os.environ['AWS_REGION_NAME']
+else:
+    MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+    MEDIA_URL = '/media/'

@@ -26,7 +26,12 @@ class SeasonAdmin(admin.ModelAdmin):
     ]
 
 
+class ContentAtomAdmin(admin.ModelAdmin):
+    model = ContentAtom
+    list_display = ('placed', 'owner', 'who', 'date')
+
+
 admin.site.register(Biography, BiographyAdmin)
 admin.site.register(Season, SeasonAdmin)
 admin.site.register(Memoir)
-admin.site.register(ContentAtom)
+admin.site.register(ContentAtom, ContentAtomAdmin)
