@@ -33,6 +33,7 @@ class Memoir(models.Model):
 
 class Period(models.Model):
     ''' a meaningful period in a life '''
+    name = models.CharField(max_length=80)
     story_audio = models.FileField(_("Story Audio"), null=True, blank=True)
     story_text = models.TextField(_("Story Text"), blank=True)
     place = models.TextField(_("Place"))
