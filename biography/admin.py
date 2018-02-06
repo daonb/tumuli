@@ -1,16 +1,16 @@
 from django.contrib import admin
 
-from .models import Biography, Season, ContentAtom, Memoir
+from .models import Biography, Period, ContentAtom, Memoir
 
 
-class SeassonInline(admin.StackedInline):
-    model = Season
+class PeriodInline(admin.StackedInline):
+    model = Period
 
 
 class BiographyAdmin(admin.ModelAdmin):
     model = Biography
     inlines = [
-        SeassonInline,
+        PeriodInline,
     ]
     list_display = ('user', 'creator', 'modified')
 
@@ -19,8 +19,8 @@ class MemoirInline(admin.StackedInline):
     model = Memoir
 
 
-class SeasonAdmin(admin.ModelAdmin):
-    model = Season
+class PeriodAdmin(admin.ModelAdmin):
+    model = Period
     inlines = [
         MemoirInline,
     ]
@@ -35,6 +35,6 @@ class ContentAtomAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Biography, BiographyAdmin)
-admin.site.register(Season, SeasonAdmin)
+admin.site.register(Period, PeriodAdmin)
 admin.site.register(Memoir)
 admin.site.register(ContentAtom, ContentAtomAdmin)

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-01 13:07+0200\n"
-"PO-Revision-Date: 2018-02-01 13:09+0200\n"
+"POT-Creation-Date: 2018-02-06 18:40+0200\n"
+"PO-Revision-Date: 2018-02-06 18:41+0200\n"
 "Last-Translator: Benny Daon <benny@tuzig.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: he\n"
@@ -26,8 +26,8 @@ msgid "Author"
 msgstr "מחבר"
 
 #: models.py:14 models.py:45
-msgid "Season"
-msgstr "עונה"
+msgid "Period"
+msgstr "תקופה"
 
 #: models.py:16
 msgid "Content"
@@ -66,8 +66,8 @@ msgid "End Date"
 msgstr "תאריך סיום"
 
 #: models.py:46
-msgid "Seasons"
-msgstr "עונות"
+msgid "Periods"
+msgstr "תקופות"
 
 #: models.py:55
 msgid "Date of birth"
@@ -148,6 +148,3 @@ msgstr "פריט תוכן"
 #: models.py:112
 msgid "Content Atoms"
 msgstr "פרטי תוכן"
-
-#~ msgid "biography"
-#~ msgstr "ביוגרפיה"

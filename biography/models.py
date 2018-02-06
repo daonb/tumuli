@@ -6,12 +6,12 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Memoir(models.Model):
-    ''' a story connection a memory dump connected to a person's season '''
+    ''' a story connection a memory dump connected to a person's period '''
     author = models.ForeignKey(
         User, verbose_name=_("Author"), null=True,
         on_delete=models.CASCADE, related_name='memoirs')
-    season = models.ForeignKey(
-        'Season', verbose_name=_("Season"), on_delete=models.CASCADE)
+    period = models.ForeignKey(
+        'Period', verbose_name=_("Period"), on_delete=models.CASCADE)
     content = models.ForeignKey(
         'ContentAtom', verbose_name=_("Content"),
         null=True, blank=True, on_delete=models.SET_NULL)
@@ -31,7 +31,7 @@ class Memoir(models.Model):
         return self.objects.get(author__is_null=True)
 
 
-class Season(models.Model):
+class Period(models.Model):
     ''' a meaningful period in a life '''
     story_audio = models.FileField(_("Story Audio"), null=True, blank=True)
     story_text = models.TextField(_("Story Text"), blank=True)
@@ -42,8 +42,8 @@ class Season(models.Model):
         'Biography', verbose_name=_("Biography"), on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = _("Season")
-        verbose_name_plural = _("Seasons")
+        verbose_name = _("Period")
+        verbose_name_plural = _("Periods")
 
 
 class Biography(models.Model):
@@ -98,8 +98,8 @@ class ContentAtom(models.Model):
     owner = models.ForeignKey(
         User, verbose_name=_("Owner"), on_delete=models.CASCADE)
     placed = models.DateTimeField(_("Import date"), auto_now_add=True)
-    seasons = models.ManyToManyField(
-        Season, through='Memoir', related_name='memoirs')
+    periods = models.ManyToManyField(
+        Period, through='Memoir', related_name='memoirs')
     who = models.TextField(
         _("Who"), blank=True, help_text=_("who is in the atom?"))
     date = models.DateTimeField(
