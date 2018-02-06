@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from .models import Biography, Period, ContentAtom, Memoir
 
@@ -13,6 +14,15 @@ class BiographyAdmin(admin.ModelAdmin):
         PeriodInline,
     ]
     list_display = ('user', 'creator', 'modified')
+    fieldsets = (
+        (_("Birth"), {
+            'fields': ('date_of_birth', 'place_of_birth')
+        }),
+        (_("Passing"), {
+            'classes': ('collapse',),
+            'fields': ('date_of_passing', 'place_of_passing')
+        }),
+    )
 
 
 class MemoirInline(admin.StackedInline):
