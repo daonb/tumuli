@@ -109,6 +109,7 @@ class ContentAtom(models.Model):
         Period, through='Memoir', related_name='memoirs')
     who = models.TextField(
         _("Who"), blank=True, help_text=_("who is in the atom?"))
+    where = models.CharField(max_length=128, null=True, blank=True)
     date = models.DateTimeField(
         _("Original Date"),
         blank=True, null=True, help_text=_("When was this atom made?"))
