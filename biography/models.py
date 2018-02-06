@@ -20,6 +20,9 @@ class Memoir(models.Model):
     story_text = models.TextField(
         _("Story Text"), blank=True,
         help_text=_("context and description of the dump"))
+    notes = models.TextField(
+        _("Notes"), blank=True,
+        help_text=_("notes by and for the biographer"))
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -36,6 +39,9 @@ class Period(models.Model):
     name = models.CharField(max_length=80)
     story_audio = models.FileField(_("Story Audio"), null=True, blank=True)
     story_text = models.TextField(_("Story Text"), blank=True)
+    notes = models.TextField(
+        _("Notes"), blank=True,
+        help_text=_("notes by and for the biographer"))
     place = models.TextField(_("Place"))
     start_date = models.DateField(_("Start Date"))
     end_date = models.DateField(_("End Date"))
