@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-06 19:11+0200\n"
+"PO-Revision-Date: 2018-02-06 19:11+0200\n"
+"Last-Translator: Benny Daon <benny@tuzig.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:18
+msgid "Birth"
+msgstr "לידה"
+
+#: admin.py:21
+msgid "Passing"
+msgstr "פטירה"
+
+#: apps.py:7 models.py:49 models.py:83
+msgid "Biography"
+msgstr "ביוגרפיה"
+
+#: models.py:11
+msgid "Author"
+msgstr "מחבר"
+
+#: models.py:14 models.py:52
+msgid "Period"
+msgstr "תקופה"
+
+#: models.py:16
+msgid "Content"
+msgstr "תוכן"
+
+#: models.py:19 models.py:40
+msgid "Story Audio"
+msgstr "שמע הסיפור"
+
+#: models.py:21 models.py:41
+msgid "Story Text"
+msgstr "מלל הסיפור"
+
+#: models.py:22
+msgid "context and description of the dump"
+msgstr "תיאור וקונטקסט"
+
+#: models.py:24 models.py:43
+msgid "Notes"
+msgstr ""
+
+#: models.py:25 models.py:44
+msgid "notes by and for the biographer"
+msgstr ""
+
+#: models.py:30
+msgid "Memoir"
+msgstr "זכרון"
+
+#: models.py:31
+msgid "Memoirs"
+msgstr "זכרונות"
+
+#: models.py:45
+msgid "Place"
+msgstr "מקום"
+
+#: models.py:46
+msgid "Start Date"
+msgstr "תאריך התחלה"
+
+#: models.py:47
+msgid "End Date"
+msgstr "תאריך סיום"
+
+#: models.py:53
+msgid "Periods"
+msgstr "תקופות"
+
+#: models.py:62
+msgid "Date of birth"
+msgstr "תאריך לידה"
+
+#: models.py:64
+msgid "Date of passing"
+msgstr "תאריך פטירה"
+
+#: models.py:65
+msgid "Place of birth"
+msgstr "מקום לידה"
+
+#: models.py:67
+msgid "Place of passing"
+msgstr "מקום פטירה"
+
+#: models.py:69
+msgid "Person"
+msgstr "אדם"
+
+#: models.py:70
+msgid "all other personal data is stored on the user"
+msgstr "כל שאר המידע האישי שמור במשתמש"
+
+#: models.py:71
+msgid "Editors"
+msgstr "עורכים"
+
+#: models.py:73
+msgid "the good people that can edit this biography"
+msgstr "העורכים שיכולים לערוך את הביוגרפיה"
+
+#: models.py:77
+msgid "Public"
+msgstr "ציבורי"
+
+#: models.py:78
+msgid "Is it public?"
+msgstr "האם ציבורי?"
+
+#: models.py:84
+msgid "Biographies"
+msgstr "ביוגרפיות"
+
+#: models.py:106
+msgid "Owner"
+msgstr "בעלים"
+
+#: models.py:107
+msgid "Import date"
+msgstr "תאריך יבוא"
+
+#: models.py:111
+msgid "Who"
+msgstr "מי"
+
+#: models.py:111
+msgid "who is in the atom?"
+msgstr "מי מופיע בתמונה/במה עוסק המסמך"
+
+#: models.py:114
+msgid "Original Date"
+msgstr "תאריך המקור"
+
+#: models.py:115
+msgid "When was this atom made?"
+msgstr "מתי צולמה/נחתם"
+
+#: models.py:116
+msgid "Image"
+msgstr "תמונה/מסמך"
+
+#: models.py:119
+msgid "Content Atom"
+msgstr "פריט תוכן"
+
+#: models.py:120
+msgid "Content Atoms"
+msgstr "פרטי תוכן"

@@ -13,8 +13,8 @@ import os
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(PROJECT_ROOT)
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'storages',
+    'biography',
 ]
 
 MIDDLEWARE = [
@@ -102,7 +104,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'he'
+
+LANGUAGES = (
+        ('en-us', 'English'),
+        ('he', 'Hebrew'),
+)
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
@@ -131,3 +138,16 @@ STATICFILES_DIRS = [
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+if 'AWS_SECRET_ACCESS_KEY' in os.environ:
+    # S3 media
+    AWS_DEFAULT_ACL="public-read"
+    AWS_STORAGE_BUCKET_NAME=os.environ['MEDIA_S3_BUCKET']
+    AWS_S3_SIGNATURE_VERSION="s3v4"
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    AWS_SECRET_ACCESS_KEY= os.environ['AWS_SECRET_ACCESS_KEY']
+    AWS_ACCESS_KEY_ID=os.environ['AWS_ACCESS_KEY_ID']
+    AWS_S3_REGION_NAME=os.environ['AWS_REGION_NAME']
+else:
+    MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+    MEDIA_URL = '/media/'
