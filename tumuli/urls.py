@@ -16,13 +16,21 @@ Including another URLconf
 
 from django.core.exceptions import ImproperlyConfigured
 from django.conf import settings
+from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
+from biography import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^memoirs/$', views.MemoirsList.as_view()), 
+    url(r'^memoirs/(?P<pk>[0-9]+)$', views.MemoirDetails),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
 
 try:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
