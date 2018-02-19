@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
 from .models import Biography, Period, ContentAtom, Memoir
+from .forms import StoryAudioForm
 
 
 class PeriodInline(admin.StackedInline):
@@ -10,6 +11,7 @@ class PeriodInline(admin.StackedInline):
 
 class BiographyAdmin(admin.ModelAdmin):
     model = Biography
+    form = StoryAudioForm
     inlines = [
         PeriodInline,
     ]
@@ -27,10 +29,12 @@ class BiographyAdmin(admin.ModelAdmin):
 
 class MemoirInline(admin.StackedInline):
     model = Memoir
+    form = StoryAudioForm
 
 
 class PeriodAdmin(admin.ModelAdmin):
     model = Period
+    form = StoryAudioForm
     inlines = [
         MemoirInline,
     ]
