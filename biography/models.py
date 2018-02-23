@@ -88,7 +88,7 @@ class Biography(models.Model):
         return not self.date_of_death
 
     def get_absolute_url(self):
-        ''' the url of the buigraphy. user the uuid for the living,
+        ''' the url of the buigraphy. use the uuid for the living,
             username for the dead.
         '''
         if self.is_dead:
@@ -96,7 +96,7 @@ class Biography(models.Model):
         else:
             return "/" + uuid
 
-    def __unicode__(self):
+    def __str__(self):
         return 'The biography of {}'.format(self.user.get_full_name())
 
 
