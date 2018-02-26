@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
 from .models import Biography, Period, ContentAtom, Memoir
-from .forms import StoryAudioForm
 
 
 class PeriodInline(admin.StackedInline):
@@ -11,12 +10,15 @@ class PeriodInline(admin.StackedInline):
 
 class BiographyAdmin(admin.ModelAdmin):
     model = Biography
-    form = StoryAudioForm
+    save_on_top = True
     inlines = [
         PeriodInline,
     ]
     list_display = ('user', 'creator', 'modified')
     fieldsets = (
+        (_("General"), {
+            'fields': ('user', )
+        }),
         (_("Birth"), {
             'fields': ('date_of_birth', 'place_of_birth')
         }),
@@ -26,15 +28,20 @@ class BiographyAdmin(admin.ModelAdmin):
         }),
     )
 
+    def save_model(self, request, obj, form, change):
+        ''' add the creator '''
+        if not obj.created:
+            obj.creator = request.user
+
+        super().save_model(request, obj, form, change)
+
 
 class MemoirInline(admin.StackedInline):
     model = Memoir
-    form = StoryAudioForm
 
 
 class PeriodAdmin(admin.ModelAdmin):
     model = Period
-    form = StoryAudioForm
     inlines = [
         MemoirInline,
     ]
