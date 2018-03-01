@@ -4,6 +4,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
+from photologue.models import Gallery, Photo
+
 
 class Memoir(models.Model):
     ''' a story connection a memory dump connected to a person's period '''
@@ -47,6 +49,9 @@ class Period(models.Model):
     end_date = models.DateField(_("End Date"))
     biography = models.ForeignKey(
         'Biography', verbose_name=_("Biography"), on_delete=models.CASCADE)
+
+    gallery = models.ForeignKey(
+        Gallery, null=True, blank=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = _("Period")
@@ -113,7 +118,8 @@ class ContentAtom(models.Model):
     date = models.DateTimeField(
         _("Original Date"),
         blank=True, null=True, help_text=_("When was this atom made?"))
-    image = models.ImageField(verbose_name=_("Image"))
+    image = models.OneToOneField(Photo, on_delete=models.CASCADE)
+    # image = models.ImageField(verbose_name=_("Image"))
 
     class Meta:
         verbose_name = _("Content Atom")

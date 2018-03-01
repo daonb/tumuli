@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
+from photologue.admin import PhotoAdmin as PhotoAdminDefault
+from photologue.models import Photo
+
 from .models import Biography, Period, ContentAtom, Memoir
 
 
@@ -54,6 +57,12 @@ class ContentAtomAdmin(admin.ModelAdmin):
         MemoirInline,
     ]
 
+class PhotoAdmin(PhotoAdminDefault):
+    readonly_fields = ()
+
+
+admin.site.unregister(Photo)
+admin.site.register(Photo, PhotoAdmin)
 
 admin.site.register(Biography, BiographyAdmin)
 admin.site.register(Period, PeriodAdmin)
