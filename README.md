@@ -1,13 +1,8 @@
 # Tumului
 
-This project is about collecting and displaying our memories for when we will be
-off to a better place. We use Python 3 and Django 2 and we're licensed under the 
+This project is about collecting and RESTing a life's story
+We use Python 3 and Django 2 and we're licensed under the 
 BSD-license.
-
-Tumuli is centered on developing a memorial for our
-friends and family.  As we are just starting, we focus on simple cases, those 
-where the departed had only neglible online presense. We scan old photos and we
-add meta data and develop an interface to cherish our dead.
 
 Contribuitions are welcomed and we try to keep things newbies friendly.  We need
 content, issues, comments and pull requests.  If you're a coder, the best place
@@ -15,8 +10,11 @@ to start is our issues.  Please read them and help us shrpen them by commenting.
 
 ## Archritecure
 
-A tumulus application is wrapped in a tumuli project.  First 3 steps are models,
-admin-based interface and RESTFull API (based on DRF).
+A `biography` django application is wrapped in a tumuli project.
+First 3 steps are models, admin-based interface and RESTFull API (based on DRF).
+We probably need a `presentation` app as we don't want to clutter `biography`
+with presentation data and it would be nice to support multiple presentations 
+per biography.
 
 ## Installation
 
