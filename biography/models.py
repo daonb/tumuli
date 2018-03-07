@@ -93,7 +93,7 @@ class Biography(models.Model):
         return not self.date_of_death
 
     def get_absolute_url(self):
-        ''' the url of the buigraphy. use the uuid for the living,
+        ''' the url of the biography. user the uuid for the living,
             username for the dead.
         '''
         if self.is_dead:
@@ -119,8 +119,7 @@ class ContentAtom(models.Model):
         _("Original Date"),
         blank=True, null=True, help_text=_("When was this atom made?"))
     image = models.OneToOneField(Photo, on_delete=models.CASCADE)
-    # image = models.ImageField(verbose_name=_("Image"))
-
+    
     class Meta:
         verbose_name = _("Content Atom")
         verbose_name_plural = _("Content Atoms")

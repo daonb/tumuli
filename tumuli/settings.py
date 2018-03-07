@@ -44,6 +44,10 @@ INSTALLED_APPS = [
     'photologue',
     'sortedm2m',
     'biography',
+    'rest_framework',
+    'drf_multiple_model',
+    'filters',
+    'api'
 ]
 
 MIDDLEWARE = [

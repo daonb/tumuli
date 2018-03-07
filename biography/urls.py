@@ -28,8 +28,12 @@ import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(biography.urls)),
+    url('^bio/(?P<username>.+)/$', views.BiographyByUserList.as_view()), # get user's Bio by username
+    url('^periods/(?P<username>.+)/$', views.PeriodByUserList.as_view()), # get user's Periods by username
+    url('^memoirs/(?P<username>.+)/$', views.MemoirsByUserList.as_view()),
+    # get user's Memoirs by username
+    url('^contentatom/(?P<username>.+)/$', views.ContentAtomByUserList.as_view()),
+     # get user's Content Atoms by username
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
