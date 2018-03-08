@@ -21,15 +21,21 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework.urlpatterns import format_suffix_patterns
-from .biography import urls
-import views
+from biography import views
+
 
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(biography.urls)),
+    # path('api/', include(biography.urls)),
+    url('api/bio/(?P<username>.+)/', views.BiographyByUserList.as_view()), # get user's Bio by username
+    url('^api/periods/(?P<username>.+)/$', views.PeriodByUserList.as_view()), # get user's Periods by username
+    url('^api/memoirs/(?P<username>.+)/$', views.MemoirsByUserList.as_view()),
+    # get user's Memoirs by username
+    url('^api/contentatom/(?P<username>.+)/$', views.ContentAtomByUserList.as_view()),
+     # get user's Content Atoms by username
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
