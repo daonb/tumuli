@@ -19,16 +19,15 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from rest_framework.urlpatterns import format_suffix_patterns
 from biography import views
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/users/', views.UserList.as_view()), # get a list off all users
-    url('^api/bio/(?P<username>.+)/$', views.BiographyByUserList.as_view()), # get user's Bio by username
+    # path('api/', include(biography.urls)),
+    url('api/bio/(?P<username>.+)/', views.BiographyByUserList.as_view()), # get user's Bio by username
     url('^api/periods/(?P<username>.+)/$', views.PeriodByUserList.as_view()), # get user's Periods by username
     url('^api/memoirs/(?P<username>.+)/$', views.MemoirsByUserList.as_view()),
     # get user's Memoirs by username

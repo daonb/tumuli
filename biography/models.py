@@ -4,6 +4,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
+from photologue.models import Gallery, Photo
+
 
 class Memoir(models.Model):
     ''' a story connection a memory dump connected to a person's period '''
@@ -48,6 +50,9 @@ class Period(models.Model):
     biography = models.ForeignKey(
         'Biography', verbose_name=_("Biography"), on_delete=models.CASCADE)
 
+    gallery = models.ForeignKey(
+        Gallery, null=True, blank=True, on_delete=models.SET_NULL)
+
     class Meta:
         verbose_name = _("Period")
         verbose_name_plural = _("Periods")
@@ -88,7 +93,7 @@ class Biography(models.Model):
         return not self.date_of_death
 
     def get_absolute_url(self):
-        ''' the url of the buigraphy. user the uuid for the living,
+        ''' the url of the biography. user the uuid for the living,
             username for the dead.
         '''
         if self.is_dead:
@@ -96,7 +101,7 @@ class Biography(models.Model):
         else:
             return "/" + uuid
 
-    def __unicode__(self):
+    def __str__(self):
         return 'The biography of {}'.format(self.user.get_full_name())
 
 
@@ -113,8 +118,8 @@ class ContentAtom(models.Model):
     date = models.DateTimeField(
         _("Original Date"),
         blank=True, null=True, help_text=_("When was this atom made?"))
-    image = models.ImageField(verbose_name=_("Image"))
-
+    image = models.OneToOneField(Photo, on_delete=models.CASCADE)
+    
     class Meta:
         verbose_name = _("Content Atom")
         verbose_name_plural = _("Content Atoms")

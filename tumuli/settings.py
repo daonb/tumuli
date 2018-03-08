@@ -26,7 +26,7 @@ SECRET_KEY = "^tzy2jws(kgjxwx__!8&#xmxpas83dcp*p5q$_0n7r0(xtcvvx"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Application definition
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,16 +34,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     # Disable Django's own staticfiles handling in favour of WhiteNoise, for
     # greater consistency between gunicorn and `./manage.py runserver`. See:
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'storages',
+    'photologue',
+    'sortedm2m',
     'biography',
     'rest_framework',
     'drf_multiple_model',
-    'filters'
+    'filters',
 ]
 
 
@@ -77,7 +80,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'tumuli.wsgi.application'
 
 

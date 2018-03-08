@@ -5,4 +5,5 @@ env
 db.sqlite3
 venv
 .vscode
-temp.txt
+*.TAG
+
