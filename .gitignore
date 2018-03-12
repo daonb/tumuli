@@ -4,4 +4,6 @@ env
 *.swp
 db.sqlite3
 venv
-local
+.vscode
+*.TAG
+
