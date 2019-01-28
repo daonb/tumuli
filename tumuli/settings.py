@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'biography',
     'rest_framework',
     'drf_multiple_model',
-    'filters',
 ]
 
 
