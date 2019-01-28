@@ -26,8 +26,9 @@ from biography import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url('^(?P<username>.+)/$', views.GetUserPage.as_view()),
     # path('api/', include(biography.urls)),
-    url('api/bio/(?P<username>.+)/', views.BiographyByUserList.as_view()), # get user's Bio by username
+    url('^api/bio/(?P<username>.+)/$', views.BiographyByUserList.as_view()), # get user's Bio by username
     url('^api/periods/(?P<username>.+)/$', views.PeriodByUserList.as_view()), # get user's Periods by username
     url('^api/memoirs/(?P<username>.+)/$', views.MemoirsByUserList.as_view()),
     # get user's Memoirs by username
