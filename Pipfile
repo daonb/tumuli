@@ -17,6 +17,7 @@ django-storages = "*"
 "boto3" = "*"
 django-photologue = "*"
 django-rest-framework = "*"
+django-rest-multiple-models = "*"
 
 [dev-packages]
 ipython = "*"
