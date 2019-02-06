@@ -4,14 +4,33 @@ from .serializers import (UserSerializer, MemoirSerializer, BiographySerializer,
 from rest_framework import generics
 from django.contrib.auth.models import User
 
-class BiographyByUserList(generics.ListAPIView):
+
+class GetUserPage(generics.ListAPIView):
     queryset = User.objects.all()
+    serializer_class = UserSerializer
+    
+    def get_queryset(self):
+        if 'uuid' in self.kwargs:
+            uuid = self.kwargs['uuid']
+            # return Memoir.objects.filter(author__uuid=uuid)
+            return "Nice!`"
+
+
+
+            # return 
+        # if 'username' in self.kwargs:
+        #     username = self.kwargs['username']
+        #     return Biography.objects.filter(user__username=username)
+
+class BiographyByUserList(generics.ListAPIView):
+    queryset = Biography.objects.all()
     serializer_class = BiographySerializer
     
     def get_queryset(self):
         if 'username' in self.kwargs:
             username = self.kwargs['username']
-            return Biography.objects.filter(user__username=username)
+            # return Biography.objects.filter(user__username=username)
+            return username
 
 
 class PeriodByUserList(generics.ListCreateAPIView):
